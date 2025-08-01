@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   namespace :users do
     root to: 'home#index'
     get 'home/index'
+    resources :pages
   end
   
   get 'daisy/sample_dashboard' => 'daisy#sample_dashboard'
