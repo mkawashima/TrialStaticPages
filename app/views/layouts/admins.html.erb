@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<%= render "layouts/head" %>
+<!-- drawer -->
+<body class="drawer bg-base-200 min-h-screen">
+<input id="my-drawer" type="checkbox" class="drawer-toggle" />
+<!-- content -->
+<main class="drawer-content">
+  <div class="grid grid-cols-12 grid-rows-[min-content] gap-y-12 p-4 lg:gap-x-12 lg:p-10">
+    <%= render "layouts/admins/header" %>
+    <%= yield %>
+  </div>
+</main>
+<!-- /content -->
+<%= render "layouts/admins/sidebar" %>
+</body>
+<!-- /drawer -->
+</html>

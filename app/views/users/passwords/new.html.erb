@@ -1,0 +1,57 @@
+<div class="m-4 min-h-[50vh] w-full max-w-sm lg:max-w-4xl">
+  <!-- logo -->
+  <div class="flex items-center justify-center gap-2 p-8">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 1024 1024"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <rect x="256" y="670.72" width="512" height="256" rx="128" class="fill-base-content" />
+      <circle cx="512" cy="353.28" r="256" class="fill-base-content" />
+      <circle
+        cx="512"
+        cy="353.28"
+        r="261"
+        stroke="black"
+        stroke-opacity="0.2"
+        stroke-width="10" />
+      <circle cx="512" cy="353.28" r="114.688" class="fill-base-200" />
+    </svg>
+    <h1 class="text-lg font-bold"><%= t('.forgot_your_password') %></h1>
+  </div>
+  <!-- /logo -->
+  <main class="bg-base-100 grid lg:aspect-2/1 lg:grid-cols-2">
+    <!-- image -->
+    <figure class="bg-base-300 pointer-events-none object-cover max-lg:hidden">
+      <img src="https://picsum.photos/id/287/1200/1200" alt="Login" class="h-full" />
+    </figure>
+    <!-- /image -->
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "flex flex-col justify-center gap-4 px-10 py-10 lg:px-16"}) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+      <!-- email -->
+      <div class="form-control">
+        <label class="label" for="user_email"><span class="label-text">Email</span></label>
+        <input
+          type="email"
+          accept="email"
+          autofocus="autofocus"
+          autocomplete="email"
+          placeholder="email"
+          class="input input-bordered [&:user-invalid]:input-warning [&:user-valid]:input-success"
+          required
+          name="user[email]"
+          id="user_email" />
+      </div>
+      <!-- /email -->
+      <%= f.submit t('.send_me_reset_password_instructions'), class: "btn btn-neutral" %>
+      <!-- login link -->
+      <div class="label justify-end">
+        <%= link_to t('devise.shared.links.login_to_existing_account'), new_session_path(resource_name), class: "link-hover link label-text-alt" %>
+      </div>
+      <!-- /login link -->
+    <% end %>
+
+  </main>
+</div>

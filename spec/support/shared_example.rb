@@ -1,0 +1,1 @@
+Dir[Rails.root.join('spec', 'shared', '**', '*.rb')].sort.each { |f| require f }
