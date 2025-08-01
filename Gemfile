@@ -92,3 +92,5 @@ gem "email_validator"
 gem "date_validator"
 gem "devise"
 gem "devise-i18n"
+
+gem "high_voltage"
